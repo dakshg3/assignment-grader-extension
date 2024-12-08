@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: sans-serif;
+      min-width: 300px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+    }
+    #result {
+      margin-top: 10px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h3>Configure Grading Prompt</h3>
+  <textarea id="prompt" placeholder="Enter your grading instructions here..."></textarea>
+  <br>
+  <button id="savePrompt">Save Prompt</button>
+  <button id="gradePDF">Grade Open PDF</button>
+  <div id="result"></div>
+  <script src="popup.js"></script>
+</body>
+</html>

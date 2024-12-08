@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "PDF Grader",
+    "version": "1.0",
+    "description": "Read open PDF, send to LLM with a prompt, get graded response.",
+    "permissions": ["scripting", "tabs", "storage", "activeTab"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["pdf/pdf.mjs", "pdf/pdf.worker.mjs"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
+  
